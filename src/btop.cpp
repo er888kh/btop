@@ -44,6 +44,10 @@ tab-size = 4
 #include <btop_draw.hpp>
 #include <btop_menu.hpp>
 
+#ifdef MESON_BUILD
+	#include "config.h"
+#endif
+
 using std::string, std::string_view, std::vector, std::atomic, std::endl, std::cout, std::min, std::flush, std::endl;
 using std::string_literals::operator""s, std::to_string;
 namespace fs = std::filesystem;
@@ -60,7 +64,11 @@ namespace Global {
 		{"#801414", "██████╔╝   ██║   ╚██████╔╝██║        ╚═╝    ╚═╝"},
 		{"#000000", "╚═════╝    ╚═╝    ╚═════╝ ╚═╝"},
 	};
+#ifdef MESON_BUILD
+	const string Version = CONFIG_BTOP_VERSION;
+#else
 	const string Version = "1.2.8";
+#endif
 
 	int coreCount;
 	string overlay;
