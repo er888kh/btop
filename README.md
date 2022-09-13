@@ -38,6 +38,12 @@
 
 ## News
 
+##### 28 August 2022
+
+[![btop4win](https://github.com/aristocratos/btop4win/raw/master/Img/logo.png)](https://github.com/aristocratos/btop4win)
+
+First release of btop4win available at https://github.com/aristocratos/btop4win
+
 ##### 16 January 2022
 
 Release v1.2.0 with FreeBSD support. No release binaries for FreeBSD provided as of yet.
@@ -274,6 +280,19 @@ Also needs a UTF8 locale and a font that covers:
     sudo zypper in btop
     ```
   * For all other versions, see [openSUSE Software: btop](https://software.opensuse.org/package/btop)
+* **Fedora**
+    ```bash
+    sudo dnf install btop
+	```
+* **RHEL/AlmaLinux 8+**
+    ```bash
+    sudo dnf install epel-release
+	sudo dnf install btop
+	```
+* **FreeBSD**
+	```sh
+	pkg install btop
+	```
 
 
 **Binary release on Homebrew (macOS (x86_64 & ARM64) / Linux (x86_64))**
@@ -548,20 +567,28 @@ Also needs a UTF8 locale and a font that covers:
 ## Installing the snap
 [![btop](https://snapcraft.io/btop/badge.svg)](https://snapcraft.io/btop)
 
+### Note: there are now two snaps available: `btop` and `btop-desktop`. The desktop version is much larger and includes the desktop entries needed to allow for launching `btop` with a click.
+
  * **Install the snap**
 
     ```bash
     sudo snap install btop
+    or
+    sudo snap install btop-desktop
     ```
  * **Install the latest snap from the edge channel**
    ```
    sudo snap install btop --edge
+   or
+   sudo snap install btop-desktop --edge
    ```
 
  * **Connect the interface**
 
     ```bash
 	sudo snap connect btop:removable-media
+	or 
+	sudo snap connect btop-desktop:removable-media
 	```
 
 

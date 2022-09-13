@@ -27,7 +27,7 @@ using namespace Tools;
 
 
 namespace Proc {
-	void proc_sorter(vector<proc_info>& proc_vec, string sorting, const bool reverse, const bool tree) {
+	void proc_sorter(vector<proc_info>& proc_vec, const string& sorting, const bool reverse, const bool tree) {
 		if (reverse) {
 			switch (v_index(sort_vector, sorting)) {
 			case 0: rng::stable_sort(proc_vec, rng::less{}, &proc_info::pid); 		break;
@@ -106,9 +106,9 @@ namespace Proc {
 		//? If filtering, include children of matching processes
 		if (not found and (should_filter or not filter.empty())) {
 			if (not s_contains(std::to_string(cur_proc.pid), filter)
-			and not s_contains(cur_proc.name, filter)
-			and not s_contains(cur_proc.cmd, filter)
-			and not s_contains(cur_proc.user, filter)) {
+			and not s_contains_ic(cur_proc.name, filter)
+			and not s_contains_ic(cur_proc.cmd, filter)
+			and not s_contains_ic(cur_proc.user, filter)) {
 				filtering = true;
 				cur_proc.filtered = true;
 				filter_found++;

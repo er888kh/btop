@@ -92,6 +92,8 @@ namespace Config {
 
 		{"proc_mem_bytes", 		"#* Show process memory as bytes instead of percent."},
 
+		{"proc_cpu_graphs",     "#* Show cpu graph for each process."},
+
 		{"proc_info_smaps",		"#* Use /proc/[pid]/smaps for memory information in the process info box (very slow but more accurate)"},
 
 		{"proc_left",			"#* Show proc box on left side of screen instead of right."},
@@ -154,6 +156,8 @@ namespace Config {
 		{"only_physical", 		"#* Filter out non physical disks. Set this to False to include network disks, RAM disks and similar."},
 
 		{"use_fstab", 			"#* Read disks list from /etc/fstab. This also disables only_physical."},
+
+		{"zfs_hide_datasets",		"#* Setting this to True will hide all datasets, and only show ZFS pools. (IO stats will be calculated per-pool)"},
 
 		{"disk_free_priv",		"#* Set to true to show available disk space for privileged users."},
 
@@ -222,6 +226,7 @@ namespace Config {
 		{"proc_gradient", true},
 		{"proc_per_core", false},
 		{"proc_mem_bytes", true},
+		{"proc_cpu_graphs", true},
 		{"proc_info_smaps", false},
 		{"proc_left", false},
         {"proc_filter_kernel", false},
@@ -241,6 +246,7 @@ namespace Config {
 		{"show_disks", true},
 		{"only_physical", true},
 		{"use_fstab", true},
+		{"zfs_hide_datasets", false},
 		{"show_io_stat", true},
 		{"io_mode", false},
 		{"base_10_sizes", false},
